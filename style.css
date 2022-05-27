@@ -1,0 +1,55 @@
+body {
+  background: linear-gradient(-45deg, #ff1e00, #f3e300) no-repeat;
+}
+.container {
+  margin: 10vh auto;
+  height: 60vh;
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "h h h"
+    "s c c"
+    "s c c"
+    "f f f";
+  gap: 1vh;
+  padding: 3vh;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.562);
+  filter: blur(6px);
+  width: 90vw;
+  /* animation: spin 3s linear infinite; */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.header {
+  grid-area: h;
+  background-color: red;
+}
+.aside {
+  grid-area: s;
+  background-color: aqua;
+}
+.conten {
+  grid-area: c;
+  background-color: brown;
+}
+.footer {
+  grid-area: f;
+  background-color: blueviolet;
+}
